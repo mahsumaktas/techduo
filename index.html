@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>⚡ TechDuo</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  :root{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --card2:#263247;
+    --blue:#38bdf8;
+    --green:#22c55e;
+    --yellow:#fbbf24;
+    --red:#f43f5e;
+    --text:#e2e8f0;
+    --muted:#94a3b8;
+    --border:#334155;
+    --radius:14px;
+  }
+  html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+  #app{max-width:600px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding-bottom:20px}
+
+  /* HEADER */
+  .header{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+  .header-logo{font-size:22px;font-weight:900;color:var(--blue);display:flex;align-items:center;gap:6px;flex:1}
+  .header-logo img{width:30px;height:30px;object-fit:contain;border-radius:50%}
+  .header-stats{display:flex;align-items:center;gap:10px}
+  .stat-badge{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:700;background:var(--card2);padding:5px 10px;border-radius:20px}
+  .stat-xp{color:var(--yellow)}
+  .stat-streak{color:#fb923c}
+  .stat-lives{color:var(--red)}
+
+  /* SCREENS */
+  .screen{flex:1;padding:16px;display:none}
+  .screen.active{display:block}
+
+  /* UNIT CARDS */
+  .unit-list{display:flex;flex-direction:column;gap:14px;padding-top:8px}
+  .unit-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:16px;cursor:pointer;transition:transform .15s,border-color .15s;position:relative;overflow:hidden}
+  .unit-card:hover{transform:translateY(-2px)}
+  .unit-card.active-unit{border-color:var(--blue);box-shadow:0 0 0 3px rgba(56,189,248,.15)}
+  .unit-card.completed-unit{border-color:var(--green)}
+  .unit-card.locked-unit{opacity:.5;cursor:not-allowed}
+  .unit-card-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .unit-emoji{font-size:26px}
+  .unit-info{flex:1}
+  .unit-title{font-size:16px;font-weight:700}
+  .unit-desc{font-size:12px;color:var(--muted);margin-top:2px}
+  .unit-badge{font-size:20px;margin-left:4px}
+  .unit-meta{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+  .unit-topics-count{font-size:12px;color:var(--muted)}
+  .unit-progress-bar{height:6px;background:var(--border);border-radius:4px;flex:1;margin:0 10px;overflow:hidden}
+  .unit-progress-fill{height:100%;background:var(--blue);border-radius:4px;transition:width .5s}
+  .unit-progress-fill.done{background:var(--green)}
+  .unit-pct{font-size:12px;font-weight:700;color:var(--muted)}
+  .unit-btn{background:var(--blue);color:#0f172a;font-weight:700;border:none;border-radius:8px;padding:7px 14px;font-size:13px;cursor:pointer;margin-top:10px;width:100%}
+  .unit-btn:hover{filter:brightness(1.1)}
+
+  /* TOPICS SCREEN */
+  .back-btn{display:flex;align-items:center;gap:6px;color:var(--blue);background:none;border:none;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:14px;padding:4px 0}
+  .back-btn:hover{text-decoration:underline}
+  .screen-title{font-size:20px;font-weight:800;margin-bottom:16px}
+  .topics-roadmap{display:flex;flex-direction:column;gap:0}
+  .topic-node{display:flex;align-items:stretch;gap:0}
+  .topic-connector{display:flex;flex-direction:column;align-items:center;width:44px;flex-shrink:0}
+  .topic-dot{width:36px;height:36px;border-radius:50%;border:3px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;background:var(--card);flex-shrink:0;z-index:1}
+  .topic-dot.done{background:var(--green);border-color:var(--green)}
+  .topic-dot.current{background:var(--blue);border-color:var(--blue);box-shadow:0 0 0 4px rgba(56,189,248,.2)}
+  .topic-line{flex:1;width:3px;background:var(--border);margin:0 auto}
+  .topic-line.done{background:var(--green)}
+  .topic-content{flex:1;padding:0 0 20px 12px}
+  .topic-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:13px;cursor:pointer;transition:border-color .15s}
+  .topic-card:hover{border-color:var(--blue)}
+  .topic-card.done{border-color:rgba(34,197,94,.4)}
+  .topic-card-title{font-size:15px;font-weight:700}
+  .topic-card-meta{font-size:12px;color:var(--muted);margin-top:3px}
+  .topic-card-status{font-size:12px;color:var(--green);font-weight:600;margin-top:3px}
+
+  /* QUESTION SCREEN */
+  .q-header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+  .q-progress{flex:1;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+  .q-progress-fill{height:100%;background:var(--blue);border-radius:4px;transition:width .4s}
+  .q-count{font-size:12px;color:var(--muted);white-space:nowrap}
+  .q-lives{font-size:14px}
+  .q-type-badge{font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .q-question{font-size:18px;font-weight:700;margin-bottom:22px;line-height:1.4}
+  .q-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+  .q-option{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:13px 12px;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;text-align:left;color:var(--text)}
+  .q-option:hover:not(:disabled){border-color:var(--blue);background:rgba(56,189,248,.1)}
+  .q-option.selected{border-color:var(--blue);background:rgba(56,189,248,.15)}
+  .q-option.correct{border-color:var(--green)!important;background:rgba(34,197,94,.15)!important;color:var(--green)}
+  .q-option.wrong{border-color:var(--red)!important;background:rgba(244,63,94,.15)!important;color:var(--red)}
+  .q-option:disabled{cursor:not-allowed}
+  .q-tf-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+  .q-tf-btn{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:18px;font-size:20px;cursor:pointer;text-align:center;transition:all .15s;color:var(--text)}
+  .q-tf-btn:hover:not(:disabled){transform:scale(1.03)}
+  .q-tf-btn.selected{border-color:var(--blue);background:rgba(56,189,248,.15)}
+  .q-tf-btn.correct{border-color:var(--green)!important;background:rgba(34,197,94,.15)!important}
+  .q-tf-btn.wrong{border-color:var(--red)!important;background:rgba(244,63,94,.15)!important}
+  .q-tf-btn:disabled{cursor:not-allowed}
+  .q-fill-wrap{margin-bottom:20px}
+  .q-fill-template{font-size:16px;line-height:1.8;margin-bottom:12px;background:var(--card);padding:14px;border-radius:10px}
+  .q-fill-template span{color:var(--blue);font-weight:700;border-bottom:2px dashed var(--blue)}
+  .q-fill-input{width:100%;background:var(--card2);border:2px solid var(--border);border-radius:10px;padding:12px;font-size:16px;color:var(--text);outline:none;transition:border-color .15s}
+  .q-fill-input:focus{border-color:var(--blue)}
+  .q-fill-input.correct{border-color:var(--green)}
+  .q-fill-input.wrong{border-color:var(--red)}
+  .q-check-btn{width:100%;background:var(--blue);color:#0f172a;font-weight:800;font-size:16px;border:none;border-radius:12px;padding:15px;cursor:pointer;transition:all .15s}
+  .q-check-btn:hover:not(:disabled){filter:brightness(1.1)}
+  .q-check-btn:disabled{opacity:.5;cursor:not-allowed}
+  .q-feedback{border-radius:var(--radius);padding:14px;margin-top:14px;margin-bottom:10px}
+  .q-feedback.correct-fb{background:rgba(34,197,94,.15);border:1px solid var(--green)}
+  .q-feedback.wrong-fb{background:rgba(244,63,94,.15);border:1px solid var(--red)}
+  .q-feedback-title{font-weight:800;font-size:15px;margin-bottom:4px}
+  .q-feedback-title.c{color:var(--green)}
+  .q-feedback-title.w{color:var(--red)}
+  .q-feedback-exp{font-size:13px;color:var(--muted);line-height:1.5}
+  .q-continue-btn{width:100%;background:var(--green);color:#fff;font-weight:800;font-size:16px;border:none;border-radius:12px;padding:15px;cursor:pointer;margin-top:8px;transition:all .15s}
+  .q-continue-btn:hover{filter:brightness(1.1)}
+  .q-xp-flash{position:fixed;top:70px;right:16px;background:var(--yellow);color:#0f172a;font-weight:800;border-radius:20px;padding:6px 14px;font-size:14px;animation:flashUp .8s forwards;pointer-events:none;z-index:999}
+  @keyframes flashUp{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-30px)}}
+
+  /* COMPLETION SCREEN */
+  .completion{text-align:center;padding:40px 16px}
+  .completion-icon{font-size:72px;margin-bottom:16px;animation:pop .5s cubic-bezier(.36,.07,.19,.97)}
+  @keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.2)}100%{transform:scale(1)}}
+  .completion-title{font-size:28px;font-weight:900;margin-bottom:8px}
+  .completion-sub{color:var(--muted);font-size:15px;margin-bottom:30px}
+  .completion-xp{background:var(--card);border:2px solid var(--yellow);border-radius:16px;padding:20px;margin-bottom:24px;display:inline-block;min-width:200px}
+  .completion-xp-label{font-size:12px;color:var(--muted);margin-bottom:4px}
+  .completion-xp-val{font-size:36px;font-weight:900;color:var(--yellow)}
+  .completion-btn{background:var(--blue);color:#0f172a;font-weight:800;font-size:17px;border:none;border-radius:14px;padding:17px 40px;cursor:pointer;width:100%;max-width:320px}
+  .completion-btn:hover{filter:brightness(1.1)}
+
+  /* NO LIVES SCREEN */
+  .no-lives{text-align:center;padding:60px 16px}
+  .no-lives-icon{font-size:72px;margin-bottom:20px}
+  .no-lives-title{font-size:26px;font-weight:900;margin-bottom:10px}
+  .no-lives-sub{color:var(--muted);margin-bottom:30px;font-size:15px}
+  .no-lives-btn{background:var(--red);color:#fff;font-weight:800;font-size:16px;border:none;border-radius:12px;padding:15px 30px;cursor:pointer;margin:6px;width:80%;max-width:280px;display:block}
+
+  /* TOAST */
+  .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 20px;font-size:14px;font-weight:600;z-index:999;animation:toastIn .3s ease;white-space:nowrap}
+  @keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
+  /* Utility */
+  .mt8{margin-top:8px}
+  .flex-center{display:flex;align-items:center;justify-content:center}
+  .emoji-unit-img{width:40px;height:40px;object-fit:contain}
+</style>
+</head>
+<body>
+<div id="app">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-logo">
+      <img src="assets/mascot.png" alt="TechDuo" onerror="this.style.display='none'">
+      ⚡ TechDuo
+    </div>
+    <div class="header-stats">
+      <div class="stat-badge stat-xp">⭐ <span id="xp-display">0</span></div>
+      <div class="stat-badge stat-streak">🔥 <span id="streak-display">0</span></div>
+      <div class="stat-badge stat-lives">❤️ <span id="lives-display">5</span></div>
+    </div>
+  </header>
+
+  <!-- HOME SCREEN -->
+  <div class="screen active" id="screen-home">
+    <div class="unit-list" id="unit-list"></div>
+  </div>
+
+  <!-- TOPICS SCREEN -->
+  <div class="screen" id="screen-topics">
+    <button class="back-btn" onclick="showHome()">← Geri</button>
+    <div class="screen-title" id="topics-unit-title">Ünite</div>
+    <div class="topics-roadmap" id="topics-roadmap"></div>
+  </div>
+
+  <!-- QUESTION SCREEN -->
+  <div class="screen" id="screen-question">
+    <div class="q-header">
+      <button class="back-btn" style="margin:0;font-size:18px;" onclick="exitQuestion()">✕</button>
+      <div class="q-progress"><div class="q-progress-fill" id="q-progress-fill"></div></div>
+      <div class="q-count" id="q-count">1/5</div>
+      <div class="q-lives" id="q-lives-disp">❤️❤️❤️❤️❤️</div>
+    </div>
+    <div id="q-body"></div>
+  </div>
+
+  <!-- COMPLETION SCREEN -->
+  <div class="screen" id="screen-completion">
+    <div class="completion">
+      <div class="completion-icon">🏆</div>
+      <div class="completion-title">Konu Tamamlandı!</div>
+      <div class="completion-sub" id="comp-sub">Harika iş çıkardın!</div>
+      <div class="completion-xp">
+        <div class="completion-xp-label">Kazanılan XP</div>
+        <div class="completion-xp-val" id="comp-xp">+35</div>
+      </div>
+      <button class="completion-btn" onclick="afterCompletion()">Devam Et →</button>
+    </div>
+  </div>
+
+  <!-- NO LIVES SCREEN -->
+  <div class="screen" id="screen-nolives">
+    <div class="no-lives">
+      <div class="no-lives-icon">🫀</div>
+      <div class="no-lives-title">Canlar Tükendi!</div>
+      <div class="no-lives-sub">Biraz dinlen, sonra tekrar dene. Canların zamanla yenileniyor!</div>
+      <button class="no-lives-btn" onclick="refillLives()">💖 Canları Yenile (Pratik Mod)</button>
+      <button class="no-lives-btn" style="background:var(--card);color:var(--text);border:2px solid var(--border);margin-top:6px;" onclick="showHome()">🏠 Ana Sayfaya Dön</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// STATE
+// ============================================================
+const DEFAULT_STATE = {xp:0,streak:0,lives:5,completedTopics:[],completedUnits:[]};
+let state = {};
+function loadState(){
+  try{ state = JSON.parse(localStorage.getItem('techduo_state')||'{}'); }catch(e){}
+  state = Object.assign({},DEFAULT_STATE,state);
+}
+function saveState(){
+  localStorage.setItem('techduo_state', JSON.stringify(state));
+  updateHeader();
+}
+function updateHeader(){
+  document.getElementById('xp-display').textContent = state.xp;
+  document.getElementById('streak-display').textContent = state.streak;
+  document.getElementById('lives-display').textContent = state.lives;
+}
+
+// ============================================================
+// CURRICULUM
+// ============================================================
+let CURRICULUM = null;
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+let currentUnitId = null;
+let currentTopicId = null;
+let currentStops = [];
+let currentStopIndex = 0;
+let sessionXP = 0;
+let selectedAnswer = null;
+let answered = false;
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-'+id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function showHome(){
+  renderHome();
+  showScreen('home');
+}
+
+function showTopics(unitId){
+  currentUnitId = unitId;
+  renderTopics(unitId);
+  showScreen('topics');
+}
+
+function startTopic(unitId, topicId){
+  if(state.lives<=0){ showScreen('nolives'); return; }
+  currentUnitId = unitId;
+  currentTopicId = topicId;
+  const unit = CURRICULUM.units.find(u=>u.id===unitId);
+  const topic = unit.topics.find(t=>t.id===topicId);
+  currentStops = topic.stops;
+  currentStopIndex = 0;
+  sessionXP = 0;
+  selectedAnswer = null;
+  answered = false;
+  renderQuestion();
+  showScreen('question');
+}
+
+function exitQuestion(){
+  if(currentUnitId) showTopics(currentUnitId);
+  else showHome();
+}
+
+function afterCompletion(){
+  // Find next topic
+  const unit = CURRICULUM.units.find(u=>u.id===currentUnitId);
+  if(!unit) return showHome();
+  const idx = unit.topics.findIndex(t=>t.id===currentTopicId);
+  if(idx>=0 && idx<unit.topics.length-1){
+    // Next topic in same unit
+    showTopics(currentUnitId);
+  } else {
+    // Unit done or last topic — go home
+    showHome();
+  }
+}
+
+// ============================================================
+// RENDER HOME
+// ============================================================
+function renderHome(){
+  if(!CURRICULUM) return;
+  updateHeader();
+  const list = document.getElementById('unit-list');
+  list.innerHTML='';
+  const units = CURRICULUM.units;
+
+  units.forEach((unit,ui)=>{
+    const topics = unit.topics||[];
+    const totalTopics = topics.length;
+    const doneTopic = topics.filter(t=>state.completedTopics.includes(t.id)).length;
+    const pct = totalTopics>0 ? Math.round((doneTopic/totalTopics)*100) : 0;
+    const isDone = state.completedUnits.includes(unit.id);
+    const isFirst = ui===0;
+    const prevDone = ui===0 || state.completedUnits.includes(units[ui-1].id);
+    const isLocked = !isFirst && !prevDone;
+    const isActive = !isLocked && !isDone;
+
+    const card = document.createElement('div');
+    card.className = 'unit-card'+(isDone?' completed-unit':isLocked?' locked-unit':' active-unit');
+
+    // Unit image map
+    const unitImgs = {
+      unit1_binary:'assets/unit-binary.png',
+      unit3_internet:'assets/unit-internet.png',
+      unit8_ai:'assets/unit-ai.png',
+    };
+    const imgSrc = unitImgs[unit.id];
+
+    card.innerHTML=`
+      <div class="unit-card-header">
+        <div class="unit-emoji">${unit.emoji||'📚'}</div>
+        <div class="unit-info">
+          <div class="unit-title">${unit.title} <span class="unit-badge">${isDone?'✅':isLocked?'🔒':''}</span></div>
+          <div class="unit-desc">${unit.description||''}</div>
+        </div>
+        ${imgSrc?`<img src="${imgSrc}" class="emoji-unit-img" alt="" onerror="this.style.display='none'">`:''}
+      </div>
+      <div class="unit-meta">
+        <span class="unit-topics-count">${totalTopics} konu</span>
+        <div class="unit-progress-bar"><div class="unit-progress-fill${isDone?' done':''}" style="width:${pct}%"></div></div>
+        <span class="unit-pct">${pct}%</span>
+      </div>
+      ${isActive?`<button class="unit-btn" onclick="showTopics('${unit.id}')">Başla →</button>`:''}
+      ${isDone?`<button class="unit-btn" style="background:var(--green)" onclick="showTopics('${unit.id}')">Tekrar Et ✅</button>`:''}
+    `;
+    if(!isLocked){
+      card.style.cursor='pointer';
+      card.addEventListener('click',(e)=>{
+        if(e.target.tagName==='BUTTON') return;
+        showTopics(unit.id);
+      });
+    }
+    list.appendChild(card);
+  });
+}
+
+// ============================================================
+// RENDER TOPICS
+// ============================================================
+function renderTopics(unitId){
+  const unit = CURRICULUM.units.find(u=>u.id===unitId);
+  if(!unit) return;
+  document.getElementById('topics-unit-title').textContent = unit.emoji+' '+unit.title;
+  const roadmap = document.getElementById('topics-roadmap');
+  roadmap.innerHTML='';
+  const topics = unit.topics||[];
+
+  topics.forEach((topic,ti)=>{
+    const isDone = state.completedTopics.includes(topic.id);
+    const prevDone = ti===0 || state.completedTopics.includes(topics[ti-1].id);
+    const isCurrent = !isDone && prevDone;
+    const isLast = ti===topics.length-1;
+    const stopCount = topic.stops ? topic.stops.length : 0;
+
+    const node = document.createElement('div');
+    node.className='topic-node';
+
+    const lineClass = isDone?'done':'';
+    node.innerHTML=`
+      <div class="topic-connector">
+        <div class="topic-dot${isDone?' done':isCurrent?' current':''}">
+          ${isDone?'✓':isCurrent?'▶':ti+1}
+        </div>
+        ${!isLast?`<div class="topic-line ${lineClass}"></div>`:''}
+      </div>
+      <div class="topic-content">
+        <div class="topic-card${isDone?' done':''}" onclick="startTopic('${unitId}','${topic.id}')">
+          <div class="topic-card-title">${topic.title}</div>
+          <div class="topic-card-meta">${stopCount} soru</div>
+          ${isDone?`<div class="topic-card-status">✅ Tamamlandı</div>`:''}
+        </div>
+      </div>
+    `;
+    roadmap.appendChild(node);
+  });
+}
+
+// ============================================================
+// RENDER QUESTION
+// ============================================================
+function renderQuestion(){
+  const stop = currentStops[currentStopIndex];
+  if(!stop) return;
+  selectedAnswer = null;
+  answered = false;
+
+  // Progress
+  const pct = Math.round((currentStopIndex/currentStops.length)*100);
+  document.getElementById('q-progress-fill').style.width = pct+'%';
+  document.getElementById('q-count').textContent = (currentStopIndex+1)+'/'+currentStops.length;
+
+  // Lives
+  const livesStr = '❤️'.repeat(Math.max(0,state.lives))+'🖤'.repeat(Math.max(0,5-state.lives));
+  document.getElementById('q-lives-disp').textContent = livesStr;
+
+  const body = document.getElementById('q-body');
+  if(stop.type==='mc') body.innerHTML = renderMC(stop);
+  else if(stop.type==='tf') body.innerHTML = renderTF(stop);
+  else if(stop.type==='fill') body.innerHTML = renderFill(stop);
+
+  // Bind events
+  if(stop.type==='mc'){
+    document.querySelectorAll('.q-option').forEach((btn,i)=>{
+      btn.addEventListener('click',()=>selectMC(i,stop));
+    });
+    document.getElementById('q-check-btn').addEventListener('click',()=>checkMC(stop));
+  } else if(stop.type==='tf'){
+    document.querySelectorAll('.q-tf-btn').forEach((btn,i)=>{
+      btn.addEventListener('click',()=>checkTF(i===0,stop,btn));
+    });
+  } else if(stop.type==='fill'){
+    const inp = document.getElementById('q-fill-input');
+    inp.addEventListener('keydown',(e)=>{ if(e.key==='Enter'&&!answered) checkFill(stop); });
+    document.getElementById('q-check-btn').addEventListener('click',()=>checkFill(stop));
+  }
+}
+
+function renderMC(stop){
+  const opts = stop.options||[];
+  return `
+    <div class="q-type-badge">Çoktan Seçmeli</div>
+    <div class="q-question">${stop.question}</div>
+    <div class="q-options">
+      ${opts.map((o,i)=>`<button class="q-option" data-i="${i}">${String.fromCharCode(65+i)}) ${o}</button>`).join('')}
+    </div>
+    <button class="q-check-btn" id="q-check-btn" disabled>Kontrol Et</button>
+    <div id="q-feedback"></div>
+  `;
+}
+
+function renderTF(stop){
+  return `
+    <div class="q-type-badge">Doğru / Yanlış</div>
+    <div class="q-question">${stop.statement}</div>
+    <div class="q-tf-options">
+      <button class="q-tf-btn" data-val="true">✅<br><span style="font-size:13px;font-weight:700">Doğru</span></button>
+      <button class="q-tf-btn" data-val="false">❌<br><span style="font-size:13px;font-weight:700">Yanlış</span></button>
+    </div>
+    <div id="q-feedback"></div>
+  `;
+}
+
+function renderFill(stop){
+  const tmpl = stop.template||'';
+  const displayed = tmpl.replace('___','<span>___</span>');
+  return `
+    <div class="q-type-badge">Boşluk Doldur</div>
+    <div class="q-fill-wrap">
+      <div class="q-fill-template">${displayed}</div>
+      <input class="q-fill-input" id="q-fill-input" type="text" placeholder="Cevabını yaz..." autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <button class="q-check-btn" id="q-check-btn">Kontrol Et</button>
+    <div id="q-feedback"></div>
+  `;
+}
+
+// ============================================================
+// ANSWER HANDLERS
+// ============================================================
+function selectMC(i, stop){
+  if(answered) return;
+  selectedAnswer = i;
+  document.querySelectorAll('.q-option').forEach((btn,bi)=>{
+    btn.classList.toggle('selected', bi===i);
+  });
+  document.getElementById('q-check-btn').disabled = false;
+}
+
+function checkMC(stop){
+  if(answered || selectedAnswer===null) return;
+  answered=true;
+  const correct = selectedAnswer===stop.correct;
+  document.querySelectorAll('.q-option').forEach((btn,bi)=>{
+    btn.disabled=true;
+    if(bi===stop.correct) btn.classList.add('correct');
+    else if(bi===selectedAnswer && !correct) btn.classList.add('wrong');
+  });
+  document.getElementById('q-check-btn').disabled=true;
+  handleResult(correct, stop.explanation);
+}
+
+function checkTF(userBool, stop, clickedBtn){
+  if(answered) return;
+  answered=true;
+  const correct = userBool===stop.correct;
+  document.querySelectorAll('.q-tf-btn').forEach(btn=>{
+    btn.disabled=true;
+    const v = btn.dataset.val==='true';
+    if(v===stop.correct) btn.classList.add('correct');
+    else if(btn===clickedBtn && !correct) btn.classList.add('wrong');
+  });
+  handleResult(correct, stop.explanation);
+}
+
+function checkFill(stop){
+  if(answered) return;
+  const inp = document.getElementById('q-fill-input');
+  if(!inp||!inp.value.trim()) return;
+  answered=true;
+  const userVal = inp.value.trim().toLowerCase().replace(/[^a-z0-9ğüşıöç]/g,'');
+  const correctVal = (stop.answer||'').toLowerCase().replace(/[^a-z0-9ğüşıöç]/g,'');
+  const correct = userVal===correctVal;
+  inp.disabled=true;
+  inp.classList.add(correct?'correct':'wrong');
+  document.getElementById('q-check-btn').disabled=true;
+  handleResult(correct, stop.explanation);
+}
+
+function handleResult(correct, explanation){
+  if(correct){
+    state.xp += 10;
+    sessionXP += 10;
+    flashXP('+10 XP');
+    // Streak: will be incremented after session
+  } else {
+    state.lives = Math.max(0, state.lives-1);
+    if(state.lives<=0){
+      saveState();
+      setTimeout(()=>{ showScreen('nolives'); },1500);
+    }
+  }
+  saveState();
+  showFeedback(correct, explanation);
+}
+
+function showFeedback(correct, explanation){
+  const fb = document.getElementById('q-feedback');
+  fb.innerHTML=`
+    <div class="q-feedback ${correct?'correct-fb':'wrong-fb'}">
+      <div class="q-feedback-title ${correct?'c':'w'}">${correct?'🎉 Harika!':'😅 Yanlış!'}</div>
+      <div class="q-feedback-exp">${explanation||''}</div>
+    </div>
+    <button class="q-continue-btn" onclick="nextStop()">Devam →</button>
+  `;
+}
+
+function nextStop(){
+  currentStopIndex++;
+  if(currentStopIndex>=currentStops.length){
+    // Topic complete!
+    finishTopic();
+  } else {
+    renderQuestion();
+  }
+}
+
+function finishTopic(){
+  const bonusXP = 25;
+  state.xp += bonusXP;
+  sessionXP += bonusXP;
+  state.streak = (state.streak||0)+1;
+
+  if(!state.completedTopics.includes(currentTopicId)){
+    state.completedTopics.push(currentTopicId);
+  }
+
+  // Check unit completion
+  const unit = CURRICULUM.units.find(u=>u.id===currentUnitId);
+  if(unit){
+    const allDone = unit.topics.every(t=>state.completedTopics.includes(t.id));
+    if(allDone && !state.completedUnits.includes(currentUnitId)){
+      state.completedUnits.push(currentUnitId);
+      state.xp += 100;
+      sessionXP += 100;
+    }
+  }
+  saveState();
+
+  document.getElementById('comp-xp').textContent = '+'+sessionXP+' XP';
+  document.getElementById('comp-sub').textContent = 'Seri: '+state.streak+'🔥 | Toplam XP: '+state.xp;
+  showScreen('completion');
+}
+
+function refillLives(){
+  state.lives = 5;
+  saveState();
+  if(currentTopicId) startTopic(currentUnitId, currentTopicId);
+  else showHome();
+}
+
+// ============================================================
+// XP FLASH
+// ============================================================
+function flashXP(text){
+  const el = document.createElement('div');
+  el.className='q-xp-flash';
+  el.textContent=text;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(), 900);
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+function showToast(msg, dur=2500){
+  const el=document.createElement('div');
+  el.className='toast';
+  el.textContent=msg;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),dur);
+}
+
+// ============================================================
+// INIT
+// ============================================================
+loadState();
+updateHeader();
+
+fetch('curriculum.json')
+  .then(r=>r.json())
+  .then(data=>{
+    CURRICULUM=data;
+    renderHome();
+  })
+  .catch(err=>{
+    document.getElementById('unit-list').innerHTML='<p style="color:var(--red);padding:20px">curriculum.json yüklenemedi: '+err.message+'</p>';
+  });
+</script>
+</body>
+</html>
