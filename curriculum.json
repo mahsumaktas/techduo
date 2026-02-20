@@ -13,7 +13,12 @@
             {
               "type": "mc",
               "question": "Bilgisayarlar temelde hangi iki rakamı anlar?",
-              "options": ["0 ve 1", "1 ve 2", "A ve B", "+ ve -"],
+              "options": [
+                "0 ve 1",
+                "1 ve 2",
+                "A ve B",
+                "+ ve -"
+              ],
               "correct": 0,
               "explanation": "Harika başlangıç! Bilgisayarlar elektrik sinyallerinin 'var' (1) ya da 'yok' (0) olmasını anlar. Bütün dijital dünya bu iki rakam üzerine kuruludur."
             },
@@ -32,7 +37,12 @@
             {
               "type": "mc",
               "question": "Bir bilgisayar için 'ışık açık' durumu hangisiyle temsil edilebilir?",
-              "options": ["1", "0", "A", "Kapalı"],
+              "options": [
+                "1",
+                "0",
+                "A",
+                "Kapalı"
+              ],
               "correct": 0,
               "explanation": "Aynen öyle! Genellikle 'var', 'açık', 'doğru' gibi durumlar 1 ile; 'yok', 'kapalı', 'yanlış' gibi durumlar 0 ile temsil edilir."
             },
@@ -45,7 +55,12 @@
             {
               "type": "mc",
               "question": "İkili (binary) sistemde '10' sayısı onluk sistemde kaçı karşılar?",
-              "options": ["2", "10", "1", "20"],
+              "options": [
+                "2",
+                "10",
+                "1",
+                "20"
+              ],
               "correct": 0,
               "explanation": "Muhteşem! Binary 10 = 1×2¹ + 0×2⁰ = 2 demektir. Bilgisayarlar saymak için onluk değil, ikili sistemi kullanır. Artık binary okuyabiliyorsun!"
             }
@@ -58,7 +73,12 @@
             {
               "type": "mc",
               "question": "8 bit bir araya gelince ne oluşur?",
-              "options": ["Bir byte", "Bir megabit", "Bir kelime", "Bir kilobyte"],
+              "options": [
+                "Bir byte",
+                "Bir megabit",
+                "Bir kelime",
+                "Bir kilobyte"
+              ],
               "correct": 0,
               "explanation": "Harika! 8 bit, 1 byte eder. Bilgisayar dünyasında çoğu temel işlem byte üzerinden yapılır. Örneğin bir harf genelde 1 byte ile temsil edilir."
             },
@@ -77,24 +97,46 @@
             {
               "type": "mc",
               "question": "'A' harfini bilgisayarda saklamak için ne kullanılır?",
-              "options": ["8 bit (1 byte)", "1 bit", "1000 byte", "1 megabyte"],
+              "options": [
+                "8 bit (1 byte)",
+                "1 bit",
+                "1000 byte",
+                "1 megabyte"
+              ],
               "correct": 0,
               "explanation": "Çok doğru! Standart karakter setlerinde (ASCII gibi) her harf, rakam ve sembol 1 byte'lık bir kod ile temsil edilir. 'A' harfinin kodu 01000001'dir."
             },
             {
               "type": "mc",
               "question": "Hangisi en büyük veri boyutunu ifade eder?",
-              "options": ["1 Terabyte (TB)", "1 Kilobyte (KB)", "1 Megabyte (MB)", "1 Gigabyte (GB)"],
+              "options": [
+                "1 Terabyte (TB)",
+                "1 Kilobyte (KB)",
+                "1 Megabyte (MB)",
+                "1 Gigabyte (GB)"
+              ],
               "correct": 0,
               "explanation": "Süper! Sıralama şöyle: Byte < Kilobyte < Megabyte < Gigabyte < Terabyte. Her biri bir öncekinin yaklaşık 1000 katıdır. Teknoloji ilerledikçe bu birimler de büyüyor!"
             },
             {
               "type": "eslestime",
               "pairs": [
-                ["1 bit", "0 veya 1"],
-                ["8 bit", "1 byte"],
-                ["1024 byte", "1 kilobyte"],
-                ["1024 MB", "1 gigabyte"]
+                [
+                  "1 bit",
+                  "0 veya 1"
+                ],
+                [
+                  "8 bit",
+                  "1 byte"
+                ],
+                [
+                  "1024 byte",
+                  "1 kilobyte"
+                ],
+                [
+                  "1024 MB",
+                  "1 gigabyte"
+                ]
               ],
               "explanation": "Harika bir tablo! Bu eşleştirmeleri ezberlemene gerek yok, ama genel mantığını kavramak dijital dünyayı anlamana çok yardımcı olur."
             }
@@ -107,7 +149,12 @@
             {
               "type": "mc",
               "question": "MP3 müzik dosyaları da aslında neye dönüştürülmüştür?",
-              "options": ["0 ve 1'lere", "Nota yazısına", "Ses dalgasına", "Radyo sinyaline"],
+              "options": [
+                "0 ve 1'lere",
+                "Nota yazısına",
+                "Ses dalgasına",
+                "Radyo sinyaline"
+              ],
               "correct": 0,
               "explanation": "Kesinlikle! Müzikten fotoğrafa, videodan metne kadar dijital ortamdaki her şey, en temelinde milyonlarca 0 ve 1'den oluşur. Dijitalleştirme, gerçek dünyayı ikili dile çevirmek demektir."
             },
@@ -126,7 +173,12 @@
             {
               "type": "mc",
               "question": "Renkleri bilgisayarda tanımlamak için kullanılan '#FF0000' ifadesi neyi temsil eder?",
-              "options": ["Kırmızı rengi (onaltılık/hexadecimal sistemde)", "Mavi rengi", "Yeşil rengi", "Siyah rengi"],
+              "options": [
+                "Kırmızı rengi (onaltılık/hexadecimal sistemde)",
+                "Mavi rengi",
+                "Yeşil rengi",
+                "Siyah rengi"
+              ],
               "correct": 0,
               "explanation": "Harika! '#FF0000' renk kodu, kırmızıyı ifade eder. Bu, 16'lık (hexadecimal) sistemdir ve her iki karakter bir renk kanalını (Kırmızı, Yeşil, Mavi) temsil eder. Bu da aslında binary'nin bir türevidir!"
             }
@@ -147,7 +199,12 @@
             {
               "type": "mc",
               "question": "Aşağıdakilerden hangisi bir donanım parçasıdır?",
-              "options": ["Ekran kartı", "Microsoft Word", "Google Chrome", "Bir PDF dosyası"],
+              "options": [
+                "Ekran kartı",
+                "Microsoft Word",
+                "Google Chrome",
+                "Bir PDF dosyası"
+              ],
               "correct": 0,
               "explanation": "Kesinlikle! Donanım, bilgisayarın fiziksel, yani dokunabileceğin parçalarıdır. Ekran kartı, fare, klavye, işlemci bunların hepsi birer donanımdır."
             },
@@ -166,17 +223,34 @@
             {
               "type": "mc",
               "question": "Bilgisayar kapandığında içindeki bilgilerin silinmediği donanım hangisidir?",
-              "options": ["Sabit Disk (HDD/SSD)", "RAM", "İşlemci (CPU)", "Ekran Kartı"],
+              "options": [
+                "Sabit Disk (HDD/SSD)",
+                "RAM",
+                "İşlemci (CPU)",
+                "Ekran Kartı"
+              ],
               "correct": 0,
               "explanation": "Mükemmel! Sabit diskler (HDD veya SSD) kalıcı depolama birimleridir. RAM'deki bilgiler ise elektrik kesildiğinde uçar gider. Bu yüzden dosyalarımızı diske kaydederiz."
             },
             {
               "type": "eslestime",
               "pairs": [
-                ["CPU", "Bilgisayarın beyni"],
-                ["RAM", "Geçici hafıza"],
-                ["SSD", "Kalıcı depolama"],
-                ["GPU", "Ekran işlemcisi"]
+                [
+                  "CPU",
+                  "Bilgisayarın beyni"
+                ],
+                [
+                  "RAM",
+                  "Geçici hafıza"
+                ],
+                [
+                  "SSD",
+                  "Kalıcı depolama"
+                ],
+                [
+                  "GPU",
+                  "Ekran işlemcisi"
+                ]
               ],
               "explanation": "Süper! Bu parçalar birlikte çalışarak bilgisayarı oluşturur. CPU düşünen, RAM hatırlayan, SSD saklayan, GPU ise görüntüyü işleyen birimdedir."
             },
@@ -195,7 +269,12 @@
             {
               "type": "mc",
               "question": "Aşağıdakilerden hangisi bir yazılımdır?",
-              "options": ["İşletim sistemi (Windows, macOS)", "Monitör", "Mouse", "USB kablosu"],
+              "options": [
+                "İşletim sistemi (Windows, macOS)",
+                "Monitör",
+                "Mouse",
+                "USB kablosu"
+              ],
               "correct": 0,
               "explanation": "Çok doğru! Yazılım, donanımı yöneten ve kullanıcıların belirli görevleri yapmasını sağlayan programların genel adıdır. İşletim sistemleri en temel yazılımlardır."
             },
@@ -208,7 +287,12 @@
             {
               "type": "mc",
               "question": "Yazılımın temel amacı nedir?",
-              "options": ["Donanıma ne yapacağını söylemek", "Bilgisayarı daha ağır yapmak", "Elektrik tüketimini artırmak", "Sadece oyun oynamak"],
+              "options": [
+                "Donanıma ne yapacağını söylemek",
+                "Bilgisayarı daha ağır yapmak",
+                "Elektrik tüketimini artırmak",
+                "Sadece oyun oynamak"
+              ],
               "correct": 0,
               "explanation": "Harika bir özet! Yazılımlar, donanım parçalarının uyum içinde çalışmasını sağlar ve bizim onlarla iletişim kurmamıza olanak tanır."
             },
@@ -221,7 +305,12 @@
             {
               "type": "mc",
               "question": "Hangisi bir 'işletim sistemi' değildir?",
-              "options": ["Microsoft Excel", "Windows 11", "macOS", "Android"],
+              "options": [
+                "Microsoft Excel",
+                "Windows 11",
+                "macOS",
+                "Android"
+              ],
               "correct": 0,
               "explanation": "Harika! Microsoft Excel bir uygulama yazılımıdır, işletim sistemi değil. İşletim sistemleri (Windows, macOS, Android, Linux) donanım ile uygulama yazılımları arasında köprü kurar."
             }
@@ -242,14 +331,24 @@
             {
               "type": "mc",
               "question": "İnternete bağlı her cihazın sahip olduğu benzersiz kimlik numarasına ne denir?",
-              "options": ["IP Adresi", "Ev Adresi", "MAC Adresi", "Posta Kodu"],
+              "options": [
+                "IP Adresi",
+                "Ev Adresi",
+                "MAC Adresi",
+                "Posta Kodu"
+              ],
               "correct": 0,
               "explanation": "Harika! IP (Internet Protocol) adresi, internet üzerindeki cihazların birbirini bulmasını sağlayan bir nevi telefon numarasıdır. Örneğin 192.168.1.1 gibi."
             },
             {
               "type": "mc",
               "question": "google.com gibi alan adlarını IP adreslerine çeviren sisteme ne ad verilir?",
-              "options": ["DNS (Domain Name System)", "GPS", "HTTP", "HTML"],
+              "options": [
+                "DNS (Domain Name System)",
+                "GPS",
+                "HTTP",
+                "HTML"
+              ],
               "correct": 0,
               "explanation": "Süpersin! Biz insanların aklında 172.217.16.78 gibi IP adreslerini tutması zor. DNS, internetin telefon rehberi gibidir; google.com'u sorarız, o bize IP adresini söyler."
             },
@@ -268,7 +367,12 @@
             {
               "type": "mc",
               "question": "İnternet, kim tarafından yönetilen merkezi bir sistemdir?",
-              "options": ["Merkezi bir yönetim yoktur, dağıtık bir ağdır", "ABD hükümeti", "Google", "BM (Birleşmiş Milletler)"],
+              "options": [
+                "Merkezi bir yönetim yoktur, dağıtık bir ağdır",
+                "ABD hükümeti",
+                "Google",
+                "BM (Birleşmiş Milletler)"
+              ],
               "correct": 0,
               "explanation": "Şaşırtıcı ama doğru! İnternet, dünyanın dört bir yanındaki milyonlarca bilgisayarın birbirine bağlandığı dağıtık bir ağdır. Tek bir merkezi yönetim yoktur."
             }
@@ -281,7 +385,12 @@
             {
               "type": "mc",
               "question": "Tarayıcı ile web sunucusu arasındaki iletişim kurallarını belirleyen protokol hangisidir?",
-              "options": ["HTTP/HTTPS", "DNS", "IP", "FTP"],
+              "options": [
+                "HTTP/HTTPS",
+                "DNS",
+                "IP",
+                "FTP"
+              ],
               "correct": 0,
               "explanation": "Aferin! HTTP (HyperText Transfer Protocol), web sayfalarının internet üzerinden nasıl aktarılacağını belirleyen kurallar bütünüdür. Tarayıcın bu dili konuşarak sunucudan sayfa ister."
             },
@@ -300,17 +409,34 @@
             {
               "type": "mc",
               "question": "Tarayıcının adres çubuğuna bir web adresi yazıp 'Enter'a bastığında ilk ne olur?",
-              "options": ["Tarayıcı, DNS'e alan adının IP adresini sorar", "Web sitesi hemen ekrana gelir", "Bilgisayar kapanır", "Monitör ısınır"],
+              "options": [
+                "Tarayıcı, DNS'e alan adının IP adresini sorar",
+                "Web sitesi hemen ekrana gelir",
+                "Bilgisayar kapanır",
+                "Monitör ısınır"
+              ],
               "correct": 0,
               "explanation": "Süper! İşte sıralama: 1) DNS'e sorarak IP'yi bulur. 2) O IP adresindeki sunucuya HTTP isteği gönderir. 3) Sunucu, sayfa dosyalarını geri gönderir. 4) Tarayıcı bu dosyaları birleştirip sayfayı gösterir."
             },
             {
               "type": "eslestime",
               "pairs": [
-                ["HTTP", "Web iletişim protokolü"],
-                ["DNS", "Alan adı çözümleme"],
-                ["IP", "Cihaz kimlik numarası"],
-                ["HTTPS", "Şifreli web iletişimi"]
+                [
+                  "HTTP",
+                  "Web iletişim protokolü"
+                ],
+                [
+                  "DNS",
+                  "Alan adı çözümleme"
+                ],
+                [
+                  "IP",
+                  "Cihaz kimlik numarası"
+                ],
+                [
+                  "HTTPS",
+                  "Şifreli web iletişimi"
+                ]
               ],
               "explanation": "Harika! Bu dört kavram internetin temelini oluşturur. Hepsini bir arada anlamak, dijital dünyada ne olup bittiğini çok daha net görüyorsun."
             }
@@ -331,7 +457,12 @@
             {
               "type": "mc",
               "question": "Bir sorunu çözmek için izlenen adım adım talimatlara ne ad verilir?",
-              "options": ["Algoritma", "Yazılım", "Donanım", "Protokol"],
+              "options": [
+                "Algoritma",
+                "Yazılım",
+                "Donanım",
+                "Protokol"
+              ],
               "correct": 0,
               "explanation": "Harika! Algoritma, bir problemi çözmek için takip edilen mantıklı adımlar dizisidir. Çay demleme tarifi bile bir algoritmadır: su kaynat, çayı koy, bekle, süz!"
             },
@@ -350,14 +481,24 @@
             {
               "type": "mc",
               "question": "Hangi örnek bir algoritmayı en iyi temsil eder?",
-              "options": ["ATM'den para çekme adımları", "Bir resim dosyası", "Bilgisayarın monitörü", "İnternet hızı"],
+              "options": [
+                "ATM'den para çekme adımları",
+                "Bir resim dosyası",
+                "Bilgisayarın monitörü",
+                "İnternet hızı"
+              ],
               "correct": 0,
               "explanation": "Kesinlikle! ATM'de: kart tak → PIN gir → tutar seç → parayı al. Bu sıralı adımlar bir algoritmadır. Algoritmalar her yerde!"
             },
             {
               "type": "mc",
               "question": "Aşağıdakilerden hangisi bir programlama dili değildir?",
-              "options": ["HTML (tek başına)", "Python", "JavaScript", "Java"],
+              "options": [
+                "HTML (tek başına)",
+                "Python",
+                "JavaScript",
+                "Java"
+              ],
               "correct": 0,
               "explanation": "İnce bir ayrım! HTML bir işaretleme dilidir (markup language), programlama dili değildir. Web sayfasının yapısını tanımlar ama mantık (karar verme, döngü) içermez. Python, JavaScript ve Java gerçek programlama dilleridir."
             },
@@ -376,17 +517,34 @@
             {
               "type": "mc",
               "question": "Yeni başlayanlar için en önerilen programlama dili hangisidir?",
-              "options": ["Python", "Assembly", "C++", "Fortran"],
+              "options": [
+                "Python",
+                "Assembly",
+                "C++",
+                "Fortran"
+              ],
               "correct": 0,
               "explanation": "Harika seçim! Python, sade ve okunabilir sözdizimi ile yeni başlayanlar için idealdir. Hem veri bilimi, hem web, hem yapay zeka alanlarında kullanılır. Dünyada en popüler dillerden biridir!"
             },
             {
               "type": "eslestime",
               "pairs": [
-                ["Python", "Veri bilimi, AI, genel amaç"],
-                ["JavaScript", "Web tarayıcısı, etkileşimli siteler"],
-                ["SQL", "Veritabanı sorguları"],
-                ["Swift", "iPhone uygulamaları"]
+                [
+                  "Python",
+                  "Veri bilimi, AI, genel amaç"
+                ],
+                [
+                  "JavaScript",
+                  "Web tarayıcısı, etkileşimli siteler"
+                ],
+                [
+                  "SQL",
+                  "Veritabanı sorguları"
+                ],
+                [
+                  "Swift",
+                  "iPhone uygulamaları"
+                ]
               ],
               "explanation": "Her dil farklı bir iş için geliştirilmiştir. Hangi alanda çalışmak istediğine göre öğreneceğin dil değişir. En iyi dil, hedefine ulaştıran dildir!"
             },
@@ -410,7 +568,7 @@
       "id": "unit5_python",
       "title": "Python'a Giriş",
       "emoji": "🐍",
-      "description": "Dünyanın en sevilen programlama dilinde ilk adımlarını at.",
+      "description": "Dünya'nın en sevilen dilini sıfırdan öğren: değişkenler, döngüler, fonksiyonlar ve daha fazlası.",
       "topics": [
         {
           "id": "topic1_print_variable",
@@ -419,7 +577,12 @@
             {
               "type": "mc",
               "question": "Python'da ekrana 'Merhaba Dünya!' yazdırmak için hangi komut kullanılır?",
-              "options": ["print('Merhaba Dünya!')", "echo 'Merhaba Dünya!'", "write('Merhaba Dünya!')", "show('Merhaba Dünya!')"],
+              "options": [
+                "print('Merhaba Dünya!')",
+                "echo 'Merhaba Dünya!'",
+                "write('Merhaba Dünya!')",
+                "show('Merhaba Dünya!')"
+              ],
               "correct": 0,
               "explanation": "Tebrikler! Python'da ekrana bir şey yazdırmak için print() fonksiyonu kullanılır. Parantez içine yazdıklarını ekranda görürsün. 'Merhaba Dünya' çoğu programcının yazdığı ilk koddur!"
             },
@@ -438,14 +601,24 @@
             {
               "type": "mc",
               "question": "Python'da hangi veri tipi sayıları ondalıklı olarak saklar?",
-              "options": ["float", "int", "str", "bool"],
+              "options": [
+                "float",
+                "int",
+                "str",
+                "bool"
+              ],
               "correct": 0,
               "explanation": "Doğru! float (floating point), 3.14 veya 9.99 gibi ondalıklı sayılar içindir. int tam sayılar (5, -3), str metinler ('merhaba'), bool ise doğru/yanlış (True/False) için kullanılır."
             },
             {
               "type": "mc",
               "question": "x = 5, y = 3 ise print(x + y) çıktısı ne olur?",
-              "options": ["8", "53", "xy", "Hata verir"],
+              "options": [
+                "8",
+                "53",
+                "xy",
+                "Hata verir"
+              ],
               "correct": 0,
               "explanation": "Muhteşem! x ve y sayısal değişkenler olduğu için toplama işlemi yapılır ve 8 ekrana yazdırılır. Eğer x = '5' olsaydı (string), o zaman '53' yazardı. Veri tipi önemli!"
             },
@@ -464,7 +637,12 @@
             {
               "type": "mc",
               "question": "Python'da bir fonksiyon tanımlamak için hangi anahtar kelime kullanılır?",
-              "options": ["def", "function", "func", "define"],
+              "options": [
+                "def",
+                "function",
+                "func",
+                "define"
+              ],
               "correct": 0,
               "explanation": "Harika! def (define kelimesinden gelir) anahtar kelimesi ile fonksiyon tanımlanır. Örneğin: def selamla(): print('Merhaba!'). Fonksiyonlar, aynı kodu tekrar tekrar yazmamızı önler."
             },
@@ -477,7 +655,12 @@
             {
               "type": "mc",
               "question": "Aşağıdaki Python kodunun çıktısı ne olur? for i in range(3): print('Evet')",
-              "options": ["Evet (3 kez)", "Evet (1 kez)", "123", "Hata"],
+              "options": [
+                "Evet (3 kez)",
+                "Evet (1 kez)",
+                "123",
+                "Hata"
+              ],
               "correct": 0,
               "explanation": "Bravo! range(3), 0, 1, 2 değerlerini üretir (3 tane). Her adımda 'Evet' yazdırılır. Toplam 3 kez 'Evet' görürsün. Döngüler sayesinde binlerce işlemi tek seferde yapabilirsin!"
             },
@@ -486,6 +669,198 @@
               "statement": "Python'da if-else yapısı, koşula göre farklı kod bloklarını çalıştırır.",
               "correct": true,
               "explanation": "Aynen! if-else, karar verme mekanizmasıdır. Örneğin: if yas >= 18: print('Yetişkin') else: print('Çocuk'). Bu sayede programlar farklı durumlar için farklı davranışlar sergileyebilir."
+            }
+          ]
+        },
+        {
+          "id": "topic_py1",
+          "title": "Merhaba Python!",
+          "stops": [
+            {
+              "type": "mc",
+              "question": "Python hangi amaçla kullanılabilir?",
+              "options": [
+                "Sadece web siteleri yapmak için",
+                "Sadece matematik hesaplamaları için",
+                "Her şey: Yapay zeka, web, oyun, otomasyon",
+                "Sadece oyun geliştirmek için"
+              ],
+              "correct": 2,
+              "explanation": "Harika! Python çok yönlü bir dildir. İnternette gezindiğin sitelerden, yapay zeka botlarına kadar her yerde kullanılır."
+            },
+            {
+              "type": "fill",
+              "question": "Ekrana bir yazı yazdırmak için ___ fonksiyonu kullanılır.",
+              "correct": "print",
+              "explanation": "Tebrikler! Python'da dış dünyaya mesaj göndermenin en temel yolu print() komutudur."
+            },
+            {
+              "type": "tf",
+              "question": "Değişkenler, verileri (isim, yaş, puan gibi) saklamak için kullandığımız sanal kutulardır.",
+              "correct": true,
+              "explanation": "Kesinlikle! Tıpkı eşyalarımızı koyduğumuz kutular gibi, verilerimizi de değişkenler içinde saklarız."
+            },
+            {
+              "type": "mc",
+              "question": "Hangi değişken ismi Python'da HATA verir?",
+              "options": [
+                "1sayi",
+                "sayi1",
+                "isim",
+                "kullanici_yasi"
+              ],
+              "correct": 0,
+              "explanation": "Doğru! Python'da değişken isimleri asla bir sayıyla başlayamaz. 'sayi1' olur ama '1sayi' olmaz."
+            },
+            {
+              "type": "tf",
+              "question": "Python'da metinler (string) tırnak işareti olmadan da doğrudan yazılabilir.",
+              "correct": false,
+              "explanation": "Yanlış! Metinleri her zaman tek (' ') veya çift (\" \") tırnak içine almalıyız ki Python onların bir kod olmadığını, sadece yazı olduğunu anlasın."
+            }
+          ]
+        },
+        {
+          "id": "topic_py2",
+          "title": "Karar Verme Zamanı: If/Else",
+          "stops": [
+            {
+              "type": "mc",
+              "question": "Bilgisayara şartlı durumlar vermek için hangi anahtar kelime kullanılır?",
+              "options": [
+                "if",
+                "when",
+                "loop",
+                "do"
+              ],
+              "correct": 0,
+              "explanation": "Süper! 'if' İngilizcede 'eğer' demektir. 'Eğer şifre doğruysa giriş yap' gibi mantıklar kurmamızı sağlar."
+            },
+            {
+              "type": "tf",
+              "question": "'else' bloğu, sadece 'if' şartı sağlanmadığında (yanlış olduğunda) çalışır.",
+              "correct": true,
+              "explanation": "Doğru! 'if' (eğer böyleyse bunu yap), 'else' (değilse şunu yap) şeklinde bir ikili takım gibi çalışırlar."
+            },
+            {
+              "type": "fill",
+              "question": "Eğer ikiden fazla seçeneğimiz varsa (örn: kırmızıysa dur, sarıysa bekle, yeşilse geç), aradaki şartlar için ___ kelimesini kullanırız.",
+              "correct": "elif",
+              "explanation": "Harika! 'elif', 'else if' kelimelerinin kısaltılmışıdır ve 'değilse eğer' anlamına gelir."
+            },
+            {
+              "type": "mc",
+              "question": "Python'da iki değerin birbirine tam olarak eşit olup olmadığını hangi işaretle kontrol ederiz?",
+              "options": [
+                "=",
+                "==",
+                "===",
+                "=>"
+              ],
+              "correct": 1,
+              "explanation": "Harika! Tek '=' işareti bir kutuya değer atamak içindir, çift '==' işareti ise iki tarafın eşitliğini kontrol etmek (soru sormak) içindir."
+            },
+            {
+              "type": "tf",
+              "question": "Python'da hangi kodun 'if' içine ait olduğunu belirtmek için süslü parantez {} kullanılır.",
+              "correct": false,
+              "explanation": "Yanlış! Python süslü parantezler yerine 'girinti' (boşluk/tab) kullanır. Bu da kodların çok daha okunaklı olmasını sağlar!"
+            }
+          ]
+        },
+        {
+          "id": "topic_py3",
+          "title": "Tekrar Eden İşler: Döngüler",
+          "stops": [
+            {
+              "type": "mc",
+              "question": "Bir işlemi ekrana 100 kere yazdırmak için en mantıklı yöntem hangisidir?",
+              "options": [
+                "100 kere print yazmak",
+                "for döngüsü kullanmak",
+                "if-else kullanmak",
+                "Değişken atamak"
+              ],
+              "correct": 1,
+              "explanation": "Kesinlikle! Döngüler, amelelik yapmaktan kurtulup tekrar eden işleri bilgisayara yaptırmanın en akıllı yoludur."
+            },
+            {
+              "type": "tf",
+              "question": "'while' döngüsü, verilen bir şart doğru olduğu sürece çalışmaya devam eder.",
+              "correct": true,
+              "explanation": "Doğru! 'while' kelimesi 'sürece/iken' demektir. 'Canım 0'dan büyük olduğu sürece (while) oyuna devam et' gibi."
+            },
+            {
+              "type": "fill",
+              "question": "Python'da bir listenin içindeki elemanları tek tek gezmek için genellikle ___ döngüsü kullanılır.",
+              "correct": "for",
+              "explanation": "Tebrikler! Listeler, metinler veya belirli bir sayı aralığında adım adım ilerlemek için 'for' döngüsü en iyi dostumuzdur."
+            },
+            {
+              "type": "mc",
+              "question": "Bir döngüyü aniden kırmak ve tamamen durdurmak için hangi komut kullanılır?",
+              "options": [
+                "stop",
+                "exit",
+                "break",
+                "continue"
+              ],
+              "correct": 2,
+              "explanation": "Doğru! 'break' komutu fren gibidir, şartlar ne olursa olsun döngüyü o saniye paramparça edip dışarı çıkar."
+            },
+            {
+              "type": "tf",
+              "question": "Döngüler sadece sayılarla çalışır, kelimelerin harfleri üzerinde döngü kuramayız.",
+              "correct": false,
+              "explanation": "Yanlış! Python o kadar esnektir ki, 'PYTHON' kelimesini bir döngüye verip her bir harfini tek tek ekrana yazdırabiliriz."
+            }
+          ]
+        },
+        {
+          "id": "topic_py4",
+          "title": "Kendi Komutlarını Yarat: Fonksiyonlar",
+          "stops": [
+            {
+              "type": "mc",
+              "question": "Python'da yeni bir fonksiyon tanımlamaya başlamak için hangi kelime kullanılır?",
+              "options": [
+                "function",
+                "def",
+                "create",
+                "fun"
+              ],
+              "correct": 1,
+              "explanation": "Harika! 'def', define (tanımlamak) kelimesinin kısaltmasıdır ve Python'a 'Bak şimdi yeni bir komut üretiyorum' demektir."
+            },
+            {
+              "type": "tf",
+              "question": "Fonksiyonlar, aynı kodları defalarca yazmaktan kurtararak işimizi çok kolaylaştırır.",
+              "correct": true,
+              "explanation": "Kesinlikle! Bir kere fonksiyon olarak tanımlarsın, sonra ismini çağırarak binlerce kez tek satırla kullanabilirsin."
+            },
+            {
+              "type": "fill",
+              "question": "Bir fonksiyondan çıkan sonucu geri döndürmek ve programın başka yerinde kullanmak için ___ kelimesi kullanılır.",
+              "correct": "return",
+              "explanation": "Çok iyi! Return, fonksiyonun işini bitirdikten sonra bize 'Al bu da bulduğum sonuç' diyerek değeri teslim etmesini sağlar."
+            },
+            {
+              "type": "mc",
+              "question": "Bir fonksiyona dışarıdan bilgi göndermek için parantez içine yazdığımız değerlere ne denir?",
+              "options": [
+                "Sonuç",
+                "Parametre",
+                "Çıktı",
+                "Döngü"
+              ],
+              "correct": 1,
+              "explanation": "Doğru! Parametreler (veya argümanlar), fonksiyonun görevini yapabilmesi için ona dışarıdan verdiğimiz hammaddelerdir."
+            },
+            {
+              "type": "tf",
+              "question": "'def' yazıp fonksiyonu tanımlamak, onun hemen o an çalışması için yeterlidir.",
+              "correct": false,
+              "explanation": "Yanlış! Sadece tanımlamak yetmez. Fonksiyonun çalışması için daha sonra ismiyle onu 'çağırmamız' (örneğin: merhaba_de()) gerekir."
             }
           ]
         }
@@ -504,7 +879,12 @@
             {
               "type": "mc",
               "question": "Veritabanının en iyi benzetmesi hangisidir?",
-              "options": ["Düzenli bir dosyalama dolabı", "Dağınık bir çöp kutusu", "Bir fotoğraf albümü", "Bir müzik çalar"],
+              "options": [
+                "Düzenli bir dosyalama dolabı",
+                "Dağınık bir çöp kutusu",
+                "Bir fotoğraf albümü",
+                "Bir müzik çalar"
+              ],
               "correct": 0,
               "explanation": "Harika benzetme! Veritabanı, verilerin düzenli, erişilebilir ve ilişkisel biçimde saklandığı sistemdir. Tıpkı bir dolap gibi her şeyin yerli yerinde olduğu bir yapı."
             },
@@ -523,14 +903,24 @@
             {
               "type": "mc",
               "question": "Hangi sistem, veritabanlarını yönetmek için kullanılır?",
-              "options": ["DBMS (Veritabanı Yönetim Sistemi)", "CPU", "RAM", "DNS"],
+              "options": [
+                "DBMS (Veritabanı Yönetim Sistemi)",
+                "CPU",
+                "RAM",
+                "DNS"
+              ],
               "correct": 0,
               "explanation": "Süper! DBMS (Database Management System), veritabanlarını oluşturmayı, güncellemeyi ve sorgulamayı sağlar. MySQL, PostgreSQL, MongoDB bunların örnekleridir."
             },
             {
               "type": "mc",
               "question": "İlişkisel veritabanlarında tablolar arasındaki bağlantı nasıl kurulur?",
-              "options": ["Anahtar (key) alanları ile", "Renk kodlamasıyla", "Alfabetik sırayla", "Dosya boyutuna göre"],
+              "options": [
+                "Anahtar (key) alanları ile",
+                "Renk kodlamasıyla",
+                "Alfabetik sırayla",
+                "Dosya boyutuna göre"
+              ],
               "correct": 0,
               "explanation": "Harika! Her tablonun bir birincil anahtarı (primary key) vardır. Başka tablolar bu anahtara referans vererek (foreign key) ilişki kurar. Örneğin Siparişler tablosu, Müşteriler tablosunun ID'sine bağlanır."
             }
@@ -543,7 +933,12 @@
             {
               "type": "mc",
               "question": "SQL'in açılımı nedir?",
-              "options": ["Structured Query Language (Yapılandırılmış Sorgu Dili)", "Simple Query Logic", "System Queue Language", "Standard Quality Level"],
+              "options": [
+                "Structured Query Language (Yapılandırılmış Sorgu Dili)",
+                "Simple Query Logic",
+                "System Queue Language",
+                "Standard Quality Level"
+              ],
               "correct": 0,
               "explanation": "Tebrikler! SQL (okunuşu: 'siquel' veya 'es-kü-el'), ilişkisel veritabanlarını yönetmek ve sorgulamak için kullanılan standart dildir. Öğrenmesi görece kolaydır!"
             },
@@ -556,7 +951,12 @@
             {
               "type": "mc",
               "question": "SELECT * FROM urunler WHERE fiyat < 100; komutu ne yapar?",
-              "options": ["Fiyatı 100'den az olan tüm ürünleri listeler", "Tüm ürünleri siler", "100 yeni ürün ekler", "Tabloyu şifreler"],
+              "options": [
+                "Fiyatı 100'den az olan tüm ürünleri listeler",
+                "Tüm ürünleri siler",
+                "100 yeni ürün ekler",
+                "Tabloyu şifreler"
+              ],
               "correct": 0,
               "explanation": "Mükemmel SQL okuma! * 'tüm sütunlar' demektir, FROM hangi tablodan alındığını, WHERE ise filtreyi belirtir. Bu sorgu, fiyatı 100'in altındaki tüm ürünlerin bütün bilgilerini getirir."
             },
@@ -569,10 +969,22 @@
             {
               "type": "eslestime",
               "pairs": [
-                ["SELECT", "Veri okuma"],
-                ["INSERT", "Yeni kayıt ekleme"],
-                ["UPDATE", "Mevcut kaydı güncelleme"],
-                ["DELETE", "Kayıt silme"]
+                [
+                  "SELECT",
+                  "Veri okuma"
+                ],
+                [
+                  "INSERT",
+                  "Yeni kayıt ekleme"
+                ],
+                [
+                  "UPDATE",
+                  "Mevcut kaydı güncelleme"
+                ],
+                [
+                  "DELETE",
+                  "Kayıt silme"
+                ]
               ],
               "explanation": "Bu dört komut SQL'in temelini oluşturur ve CRUD operasyonları olarak bilinir (Create, Read, Update, Delete). Bir uygulamanın veri işlemlerinin tamamı bu dört eylemden oluşur!"
             }
@@ -584,7 +996,7 @@
       "id": "unit7_webdev",
       "title": "Web Geliştirme Temelleri",
       "emoji": "🕸️",
-      "description": "Web sitelerinin nasıl yapıldığını, HTML, CSS ve JavaScript'in ne işe yaradığını öğren.",
+      "description": "Web'in temellerini kavra: HTML, CSS, JavaScript ve tarayıcının perde arkasını keşfet.",
       "topics": [
         {
           "id": "topic1_html",
@@ -593,7 +1005,12 @@
             {
               "type": "mc",
               "question": "HTML'nin görevi nedir?",
-              "options": ["Web sayfasının yapısını ve içeriğini tanımlar", "Sayfanın rengini belirler", "İnternet hızını artırır", "Güvenlik sağlar"],
+              "options": [
+                "Web sayfasının yapısını ve içeriğini tanımlar",
+                "Sayfanın rengini belirler",
+                "İnternet hızını artırır",
+                "Güvenlik sağlar"
+              ],
               "correct": 0,
               "explanation": "Harika! HTML (HyperText Markup Language), bir web sayfasının iskeletidir. Başlıkları, paragrafları, resimleri, linkleri tanımlayan etiketlerden oluşur. Renk ve tasarım CSS'in işidir!"
             },
@@ -612,7 +1029,12 @@
             {
               "type": "mc",
               "question": "Bir web sayfasındaki tıklanabilir linkleri oluşturmak için hangi HTML etiketi kullanılır?",
-              "options": ["<a href='...'>", "<link>", "<url>", "<click>"],
+              "options": [
+                "<a href='...'>",
+                "<link>",
+                "<url>",
+                "<click>"
+              ],
               "correct": 0,
               "explanation": "Mükemmel! <a> (anchor/çapa) etiketi, href özelliği ile birlikte link oluşturur. Örneğin: <a href='https://google.com'>Google'a git</a>. Web'deki bağlantıların hepsi bu etiketle yapılır!"
             }
@@ -625,7 +1047,12 @@
             {
               "type": "mc",
               "question": "CSS'nin görevi nedir?",
-              "options": ["Web sayfasının görünümünü ve stilini belirler", "Sayfanın yapısını oluşturur", "Veritabanını yönetir", "Sunucu kurulumu yapar"],
+              "options": [
+                "Web sayfasının görünümünü ve stilini belirler",
+                "Sayfanın yapısını oluşturur",
+                "Veritabanını yönetir",
+                "Sunucu kurulumu yapar"
+              ],
               "correct": 0,
               "explanation": "Harika! CSS (Cascading Style Sheets), HTML ile oluşturulan iskeleti güzel gösterir: renkler, yazı tipleri, boyutlar, kenar boşlukları, animasyonlar hep CSS'in işidir. HTML beden, CSS giysi!"
             },
@@ -638,10 +1065,22 @@
             {
               "type": "eslestime",
               "pairs": [
-                ["HTML", "Sayfanın yapısı ve içeriği"],
-                ["CSS", "Görünüm ve tasarım"],
-                ["JavaScript", "Etkileşim ve dinamizm"],
-                ["Backend", "Sunucu tarafı işlemler"]
+                [
+                  "HTML",
+                  "Sayfanın yapısı ve içeriği"
+                ],
+                [
+                  "CSS",
+                  "Görünüm ve tasarım"
+                ],
+                [
+                  "JavaScript",
+                  "Etkileşim ve dinamizm"
+                ],
+                [
+                  "Backend",
+                  "Sunucu tarafı işlemler"
+                ]
               ],
               "explanation": "Bu üçlü birlikte çalışır: HTML sandığı yapar, CSS boyar, JavaScript içini doldurur. Her modern web sitesi bu üç teknoloji üzerine kuruludur."
             },
@@ -654,9 +1093,206 @@
             {
               "type": "mc",
               "question": "Bir web sayfasında bir butona tıklandığında bir şey yapması için hangi teknoloji kullanılır?",
-              "options": ["JavaScript", "HTML", "CSS", "DNS"],
+              "options": [
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "DNS"
+              ],
               "correct": 0,
               "explanation": "Süper! Kullanıcı etkileşimleri (tıklama, yazma, kaydırma) JavaScript ile yakalanır ve işlenir. Örneğin butona tıklanınca yeni içerik yüklenmesi, form gönderilmesi veya animasyon başlatılması JavaScript sayesindedir."
+            }
+          ]
+        },
+        {
+          "id": "topic_web1",
+          "title": "İnternet Nasıl Çalışır?",
+          "stops": [
+            {
+              "type": "mc",
+              "question": "Tarayıcımızın girdiğimiz adresin başındaki 'https' neyi ifade eder?",
+              "options": [
+                "Güvenli iletişim kurallarını",
+                "Web sitesinin ana adını",
+                "Kullandığımız tarayıcı markasını",
+                "Sunucunun internet hızını"
+              ],
+              "correct": 0,
+              "explanation": "Süper! HTTPS (Hypertext Transfer Protocol Secure), bilgilerimizin şifrelenerek güvenli bir şekilde sunucuya taşındığını gösterir."
+            },
+            {
+              "type": "tf",
+              "question": "Bir web sitesine girdiğimizde aslında başka bir bilgisayardan (sunucudan) dosya indirip görüntüleriz.",
+              "correct": true,
+              "explanation": "Doğru! İnternet aslında dünyanın her yerine dağılmış, 7/24 açık güçlü bilgisayarların (sunucuların) birbirine kablolarla bağlı olmasıdır."
+            },
+            {
+              "type": "fill",
+              "question": "Web sitelerinin internetteki adreslerine (örneğin google.com) genel olarak kısaca ___ adı verilir.",
+              "correct": "URL",
+              "explanation": "Tebrikler! URL (Uniform Resource Locator), aradığımız dosyanın devasa internet evrenindeki tam adresidir."
+            },
+            {
+              "type": "mc",
+              "question": "Web tarayıcısı (Chrome, Safari vb.) tam olarak ne işe yarar?",
+              "options": [
+                "Sadece internetten oyun oynatır",
+                "Bizi internete bağlayan fiziksel kablodur",
+                "Sunucudan gelen karmaşık kodları görsel bir siteye dönüştürür",
+                "İnternet faturamızı hesaplar"
+              ],
+              "correct": 2,
+              "explanation": "Kesinlikle! Tarayıcı bir çevirmen gibidir. HTML, CSS ve JavaScript kodlarını alır, bizim anlayacağımız güzel bir görünüme dönüştürür."
+            },
+            {
+              "type": "tf",
+              "question": "Web sitelerine bağlanıp onlardan sayfa göstermelerini isterken kendi cihazımız 'İstemci' (Client) rolündedir.",
+              "correct": true,
+              "explanation": "Doğru! Biz 'İstemci' olarak web sayfasını isteriz, karşıdaki 'Sunucu' (Server) ise bu isteğimize cevap verip dosyaları bize sunar."
+            }
+          ]
+        },
+        {
+          "id": "topic_web2",
+          "title": "Web'in İskeleti: HTML",
+          "stops": [
+            {
+              "type": "mc",
+              "question": "HTML'in web dünyasındaki görevi nedir?",
+              "options": [
+                "Animasyonlar ve görsel tasarım yapmak",
+                "Web sayfasının temel iskeletini ve içeriğini oluşturmak",
+                "Kullanıcı şifrelerini korumak",
+                "Veritabanı oluşturmak"
+              ],
+              "correct": 1,
+              "explanation": "Harika! HTML bir programlama dili değildir; metinleri, resimleri ve bağlantıları yerleştirdiğimiz iskelet sistemidir."
+            },
+            {
+              "type": "tf",
+              "question": "HTML etiketleri (tag) genellikle küçüktür (<) ve büyüktür (>) işaretleri arasına yazılır.",
+              "correct": true,
+              "explanation": "Doğru! Tarayıcı, normal yazılar ile sayfanın yapısını belirleyen etiketleri birbirinden bu < > işaretleri sayesinde ayırır."
+            },
+            {
+              "type": "fill",
+              "question": "Sayfamıza bir görsel/resim eklemek için İngilizce image kelimesinin kısaltması olan `<___>` etiketini kullanırız.",
+              "correct": "img",
+              "explanation": "Çok iyi! `<img>` etiketi sayesinde web sayfalarımızı renklendirecek fotoğraflar ve logolar ekleyebiliriz."
+            },
+            {
+              "type": "mc",
+              "question": "Sayfadaki en büyük ve en önemli başlığı oluşturmak için hangi etiket kullanılır?",
+              "options": [
+                "<h1>",
+                "<header>",
+                "<big>",
+                "<title>"
+              ],
+              "correct": 0,
+              "explanation": "Doğru! 'h' harfi Heading (Başlık) kelimesinden gelir. h1 en büyük başlık, h6 ise en küçük başlıktır."
+            },
+            {
+              "type": "tf",
+              "question": "Sadece HTML kullanarak bir web sitesini rengarenk, animasyonlu ve çok şık hale getirebiliriz.",
+              "correct": false,
+              "explanation": "Yanlış! HTML sadece iskelettir ve çok sade görünür. İşin içine renkler, şekiller ve şıklık girmesi için CSS'e ihtiyacımız vardır."
+            }
+          ]
+        },
+        {
+          "id": "topic_web3",
+          "title": "Web'in Kıyafeti: CSS",
+          "stops": [
+            {
+              "type": "mc",
+              "question": "CSS'in temel görevi nedir?",
+              "options": [
+                "Sunucuyla arka planda konuşmak",
+                "Sayfaya renk, düzen, makyaj ve stil katmak",
+                "Verileri güvenle veritabanına kaydetmek",
+                "Site hızını internet sağlayıcısında artırmak"
+              ],
+              "correct": 1,
+              "explanation": "Kesinlikle! CSS tasarımcının fırçasıdır. Arka plan renkleri, yazı tipleri, boşluklar ve mobil uyumluluk CSS ile yapılır."
+            },
+            {
+              "type": "tf",
+              "question": "Eğer HTML bir evin tuğlaları ve iskeletiyse, CSS o evin boyası, perdeleri ve dekorasyonudur.",
+              "correct": true,
+              "explanation": "Harika bir benzetme ve tamamen doğru! HTML yapıyı kurar, CSS ise onu göze hitap eden bir şahesere dönüştürür."
+            },
+            {
+              "type": "fill",
+              "question": "CSS'te bir yazının rengini mavi yapmak için İngilizce renk anlamına gelen `___: blue;` yazarız.",
+              "correct": "color",
+              "explanation": "Tebrikler! CSS kuralları çok mantıklıdır, genellikle İngilizce kelimelerin doğrudan kullanımıyla stiller belirlenir."
+            },
+            {
+              "type": "mc",
+              "question": "Aşağıdakilerden hangisi CSS ile YAPILAMAZ?",
+              "options": [
+                "Arka plan rengini değiştirmek",
+                "Yazıların boyutunu ve tipini büyütmek",
+                "Kullanıcıları veritabanına kaydetmek",
+                "Butonların köşelerini yuvarlatıp gölge eklemek"
+              ],
+              "correct": 2,
+              "explanation": "Doğru! Veritabanı işlemleri, giriş/çıkış yapma gibi mantıksal işlemler CSS'in değil; arka uç (backend) dillerinin işidir."
+            },
+            {
+              "type": "tf",
+              "question": "CSS dosyaları silinirse web siteleri çöker ve içindeki hiçbir yazıyı okuyamayız.",
+              "correct": false,
+              "explanation": "Yanlış! Site çökmez, içerik (HTML) hala oradadır ve okunabilir. Sadece tüm renkleri, düzenleri kaybolur ve alt alta yazılmış sıkıcı bir metne dönüşür."
+            }
+          ]
+        },
+        {
+          "id": "topic_web4",
+          "title": "Web'in Beyni: JavaScript",
+          "stops": [
+            {
+              "type": "mc",
+              "question": "JavaScript web sayfasına hangi özelliği katar?",
+              "options": [
+                "Sadece yazıları kalınlaştırma",
+                "Hareketsiz resim galerisi",
+                "Etkileşim, canlılık ve mantık",
+                "Sitenin yayınlanmasını sağlama"
+              ],
+              "correct": 2,
+              "explanation": "Süper! Açılır menüler, beğeni butonuna basınca kalp çıkması, şifre yanlışsa uyarı vermesi hep JavaScript'in işidir."
+            },
+            {
+              "type": "tf",
+              "question": "İsimleri birbirine çok benzese de, JavaScript ve Java tamamen farklı iki programlama dilidir.",
+              "correct": true,
+              "explanation": "Kesinlikle! 'Araba' ile 'Pazar Arabası' ne kadar aynıysa, Java ve JavaScript de ancak o kadar aynıdır."
+            },
+            {
+              "type": "fill",
+              "question": "Kullanıcıya ekranda küçük bir pop-up uyarı kutusu çıkarmak için `___()` komutu kullanılır.",
+              "correct": "alert",
+              "explanation": "Tebrikler! Alert (uyarı) fonksiyonu, ekranda o meşhur 'Tamam' butonlu küçük kutucukları göstermemizi sağlar."
+            },
+            {
+              "type": "mc",
+              "question": "Ekranda bir butona tıklandığında ne olacağını belirleyen teknoloji hangisidir?",
+              "options": [
+                "HTML <button> Etiketi",
+                "CSS Renk Kodu",
+                "JavaScript Olay Dinleyicisi (Event Listener)",
+                "URL Adresi"
+              ],
+              "correct": 2,
+              "explanation": "Doğru! JavaScript ile butona bir kulaklık takarız (Event Listener). Tıklama olayını (click) duyduğu anda istediğimiz kodu çalıştırır."
+            },
+            {
+              "type": "tf",
+              "question": "JavaScript günümüzde o kadar gelişmiştir ki, sadece tarayıcılarda değil sunucu tarafında (Node.js) da çalışabilmektedir.",
+              "correct": true,
+              "explanation": "Doğru! Eskiden sadece ön yüzde (frontend) kullanılan JavaScript, artık Node.js sayesinde bir sitenin arka yüzünü (backend) yazmak için de bolca kullanılıyor."
             }
           ]
         }
@@ -675,7 +1311,12 @@
             {
               "type": "mc",
               "question": "İnsan zekasını taklit eden makineler veya programlar hangi genel başlık altında toplanır?",
-              "options": ["Yapay Zeka (AI)", "Makine Öğrenmesi (ML)", "Derin Öğrenme (DL)", "Veri Bilimi (DS)"],
+              "options": [
+                "Yapay Zeka (AI)",
+                "Makine Öğrenmesi (ML)",
+                "Derin Öğrenme (DL)",
+                "Veri Bilimi (DS)"
+              ],
               "correct": 0,
               "explanation": "Harika! Yapay Zeka (Artificial Intelligence), en geniş şemsiye terimdir. İnsan gibi düşünen, öğrenen veya problem çözen tüm sistemleri kapsar."
             },
@@ -694,17 +1335,34 @@
             {
               "type": "mc",
               "question": "Hangisi bir yapay zeka uygulaması değildir?",
-              "options": ["Hesap makinesi", "Yüz tanıma sistemleri", "Siri veya Google Asistan", "Netflix'in film önerileri"],
+              "options": [
+                "Hesap makinesi",
+                "Yüz tanıma sistemleri",
+                "Siri veya Google Asistan",
+                "Netflix'in film önerileri"
+              ],
               "correct": 0,
               "explanation": "Süpersin! Hesap makinesi sadece önceden programlanmış kuralları uygular, veriden öğrenmez. Diğerleri ise verilerden öğrenerek tahmin ve önerilerde bulunur."
             },
             {
               "type": "eslestime",
               "pairs": [
-                ["Yapay Zeka (AI)", "Zeka gerektiren görevleri yapan sistemler"],
-                ["Makine Öğrenmesi (ML)", "Veriden öğrenen algoritmalar"],
-                ["Derin Öğrenme (DL)", "Sinir ağı tabanlı ML"],
-                ["NLP", "Doğal dil işleme"]
+                [
+                  "Yapay Zeka (AI)",
+                  "Zeka gerektiren görevleri yapan sistemler"
+                ],
+                [
+                  "Makine Öğrenmesi (ML)",
+                  "Veriden öğrenen algoritmalar"
+                ],
+                [
+                  "Derin Öğrenme (DL)",
+                  "Sinir ağı tabanlı ML"
+                ],
+                [
+                  "NLP",
+                  "Doğal dil işleme"
+                ]
               ],
               "explanation": "Bu kavramlar iç içe geçmiş daireler gibidir: AI en büyük daire, ML onun içinde, Derin Öğrenme ML'in içinde. NLP ise dili anlayan bir yapay zeka dalıdır."
             }
@@ -717,7 +1375,12 @@
             {
               "type": "mc",
               "question": "ChatGPT veya Gemini gibi sohbet robotlarının arkasındaki teknolojiye ne ad verilir?",
-              "options": ["Büyük Dil Modeli (LLM)", "İşletim Sistemi", "Web Tarayıcısı", "Sosyal Medya Platformu"],
+              "options": [
+                "Büyük Dil Modeli (LLM)",
+                "İşletim Sistemi",
+                "Web Tarayıcısı",
+                "Sosyal Medya Platformu"
+              ],
               "correct": 0,
               "explanation": "Çok doğru! LLM (Large Language Model), devasa miktarda metin verisiyle eğitilmiş, insan dilini anlama ve üretme konusunda uzmanlaşmış bir yapay zeka türüdür."
             },
@@ -736,7 +1399,12 @@
             {
               "type": "mc",
               "question": "İyi bir prompt (komut) nasıl olmalıdır?",
-              "options": ["Açık, net ve detaylı", "Mümkün olduğunca kısa", "Sadece tek kelime", "Anlaşılmaz ve karmaşık"],
+              "options": [
+                "Açık, net ve detaylı",
+                "Mümkün olduğunca kısa",
+                "Sadece tek kelime",
+                "Anlaşılmaz ve karmaşık"
+              ],
               "correct": 0,
               "explanation": "Kesinlikle! Yapay zekadan en iyi sonucu almak için ona bir rol verebilir, bağlam sunabilir ve ne istediğini adım adım net bir şekilde anlatabilirsin. Buna 'Prompt Engineering' deniyor."
             }
@@ -757,7 +1425,12 @@
             {
               "type": "mc",
               "question": "Git'in temel amacı nedir?",
-              "options": ["Kod değişikliklerini takip etmek ve ekip çalışmasını kolaylaştırmak", "İnternet hızını ölçmek", "Veritabanı oluşturmak", "Web sitesi tasarlamak"],
+              "options": [
+                "Kod değişikliklerini takip etmek ve ekip çalışmasını kolaylaştırmak",
+                "İnternet hızını ölçmek",
+                "Veritabanı oluşturmak",
+                "Web sitesi tasarlamak"
+              ],
               "correct": 0,
               "explanation": "Harika! Git, bir 'versiyon kontrol sistemi'dir. Kodun tüm geçmişini saklar, kimin ne zaman ne değiştirdiğini gösterir ve birden fazla kişinin aynı kod üzerinde çalışmasını sağlar."
             },
@@ -776,17 +1449,34 @@
             {
               "type": "mc",
               "question": "Git'te 'branch' (dal) ne işe yarar?",
-              "options": ["Ana koddan bağımsız yeni özellikler geliştirmek için", "Kodu silmek için", "DNS ayarlamak için", "Veritabanı yedeklemek için"],
+              "options": [
+                "Ana koddan bağımsız yeni özellikler geliştirmek için",
+                "Kodu silmek için",
+                "DNS ayarlamak için",
+                "Veritabanı yedeklemek için"
+              ],
               "correct": 0,
               "explanation": "Bravo! Branch, ana koddan ayrı bir çalışma alanı açar. Yeni özelliği burada geliştirip test edersin; hazır olunca ana koda (main/master branch'e) birleştirirsin. Bu sayede ana kod bozulmaz."
             },
             {
               "type": "eslestime",
               "pairs": [
-                ["git clone", "Depoyu bilgisayara indir"],
-                ["git add", "Değişiklikleri sahneye al"],
-                ["git commit", "Değişiklikleri kaydet"],
-                ["git push", "Değişiklikleri buluta gönder"]
+                [
+                  "git clone",
+                  "Depoyu bilgisayara indir"
+                ],
+                [
+                  "git add",
+                  "Değişiklikleri sahneye al"
+                ],
+                [
+                  "git commit",
+                  "Değişiklikleri kaydet"
+                ],
+                [
+                  "git push",
+                  "Değişiklikleri buluta gönder"
+                ]
               ],
               "explanation": "Git iş akışı böyle ilerler: değişiklik yap → add → commit → push. Bu döngüyü tekrar tekrar yaparsan versiyon kontrol ustası olursun!"
             }
@@ -799,7 +1489,12 @@
             {
               "type": "mc",
               "question": "Docker ne işe yarar?",
-              "options": ["Uygulamaları taşınabilir 'konteyner'lere paketler", "İnternet tarayıcısı işlevi görür", "Veritabanı sorgular", "E-posta gönderir"],
+              "options": [
+                "Uygulamaları taşınabilir 'konteyner'lere paketler",
+                "İnternet tarayıcısı işlevi görür",
+                "Veritabanı sorgular",
+                "E-posta gönderir"
+              ],
               "correct": 0,
               "explanation": "Harika! Docker, bir uygulamayı tüm bağımlılıklarıyla birlikte kapsülleyen konteyner teknolojisidir. 'Bende çalışıyor ama sende çalışmıyor' problemini ortadan kaldırır. Her ortamda aynı şekilde çalışır!"
             },
@@ -818,7 +1513,12 @@
             {
               "type": "mc",
               "question": "Hangisi bir bulut bilişim sağlayıcısı değildir?",
-              "options": ["WhatsApp", "Amazon Web Services (AWS)", "Microsoft Azure", "Google Cloud Platform"],
+              "options": [
+                "WhatsApp",
+                "Amazon Web Services (AWS)",
+                "Microsoft Azure",
+                "Google Cloud Platform"
+              ],
               "correct": 0,
               "explanation": "Doğru! WhatsApp bir mesajlaşma uygulamasıdır, bulut sağlayıcısı değil. AWS, Azure ve Google Cloud dünya genelinde en büyük üç bulut platformudur ve birlikte pazarın büyük kısmını yönetir."
             }
@@ -839,7 +1539,12 @@
             {
               "type": "mc",
               "question": "Aşağıdakilerden hangisi en güvenli şifredir?",
-              "options": ["MaviAraba78!.", "123456", "ahmet", "parola"],
+              "options": [
+                "MaviAraba78!.",
+                "123456",
+                "ahmet",
+                "parola"
+              ],
               "correct": 0,
               "explanation": "Harika seçim! Güçlü bir şifre; büyük harf, küçük harf, rakam ve sembol içerir. Ayrıca tahmin edilmesi zor ve yeterince uzun olmalıdır."
             },
@@ -858,17 +1563,34 @@
             {
               "type": "mc",
               "question": "Şifrenizi nerede saklamak en risklidir?",
-              "options": ["Monitöre yapıştırılmış bir not kağıdında", "Güvenilir bir şifre yöneticisi programında", "Ezberinizde", "Kilitli bir kasada"],
+              "options": [
+                "Monitöre yapıştırılmış bir not kağıdında",
+                "Güvenilir bir şifre yöneticisi programında",
+                "Ezberinizde",
+                "Kilitli bir kasada"
+              ],
               "correct": 0,
               "explanation": "Kesinlikle! Fiziksel olarak görünür veya kolay erişilebilir bir yerde şifre saklamak çok tehlikelidir. En güvenli yöntemlerden biri, şifre yöneticisi uygulamaları kullanmaktır."
             },
             {
               "type": "eslestime",
               "pairs": [
-                ["2FA", "İki adımlı doğrulama"],
-                ["Şifre yöneticisi", "Tüm şifreleri güvenle saklar"],
-                ["Güçlü şifre", "Harf+rakam+sembol, min 12 karakter"],
-                ["Farklı şifreler", "Her hesap için ayrı şifre"]
+                [
+                  "2FA",
+                  "İki adımlı doğrulama"
+                ],
+                [
+                  "Şifre yöneticisi",
+                  "Tüm şifreleri güvenle saklar"
+                ],
+                [
+                  "Güçlü şifre",
+                  "Harf+rakam+sembol, min 12 karakter"
+                ],
+                [
+                  "Farklı şifreler",
+                  "Her hesap için ayrı şifre"
+                ]
               ],
               "explanation": "Bu dört güvenlik alışkanlığını edinirsen dijital hesaplarını çok güçlü koruma altına almış olursun. Bugün bir adım at: şifre yöneticisi kur!"
             }
@@ -881,7 +1603,12 @@
             {
               "type": "mc",
               "question": "Bankanızdan gelmiş gibi görünen ve şifrenizi girmenizi isteyen bir e-posta alırsanız ne yapmalısınız?",
-              "options": ["E-postayı hemen silmeli ve linke tıklamamalı", "Linke tıklayıp şifremi girmeliyim", "E-postayı tüm arkadaşlarıma göndermeliyim", "Cevap yazıp kişisel bilgilerimi yollamalıyım"],
+              "options": [
+                "E-postayı hemen silmeli ve linke tıklamamalı",
+                "Linke tıklayıp şifremi girmeliyim",
+                "E-postayı tüm arkadaşlarıma göndermeliyim",
+                "Cevap yazıp kişisel bilgilerimi yollamalıyım"
+              ],
               "correct": 0,
               "explanation": "Harika bir refleks! Bu bir 'oltalama' (phishing) saldırısıdır. Dolandırıcılar, resmi bir kurum gibi davranarak bilgilerinizi çalmaya çalışır. Bankalar ve resmi kurumlar asla e-posta ile şifre istemez."
             },
@@ -900,7 +1627,12 @@
             {
               "type": "mc",
               "question": "Aşağıdakilerden hangisi bir oltalama girişiminin işareti değildir?",
-              "options": ["Bankanızın resmi uygulamasından gelen bildirim", "Acil! Hesabınız kapatılacak!' gibi korku yaratan mesajlar", "Sizi tanımayan birinden kazandığınızı söyleyen e-posta", "Şifrenizi isteyen bir link"],
+              "options": [
+                "Bankanızın resmi uygulamasından gelen bildirim",
+                "Acil! Hesabınız kapatılacak!' gibi korku yaratan mesajlar",
+                "Sizi tanımayan birinden kazandığınızı söyleyen e-posta",
+                "Şifrenizi isteyen bir link"
+              ],
               "correct": 0,
               "explanation": "Doğru! Bankanın kendi resmi uygulamasından gelen bildirimler genellikle güvenlidir (uygulama mağazasından indirdiğinizden emin olun). Aciliyet yaratan mesajlar, tanımadıktan ödül ve şifre isteyen linkler klasik oltalama belirtileridir."
             }
@@ -913,7 +1645,12 @@
             {
               "type": "mc",
               "question": "VPN'in temel amacı nedir?",
-              "options": ["İnternet trafiğini şifreleyerek gizliliği artırmak", "İnternet hızını yavaşlatmak", "Daha fazla reklam göstermek", "Bilgisayara virüs bulaştırmak"],
+              "options": [
+                "İnternet trafiğini şifreleyerek gizliliği artırmak",
+                "İnternet hızını yavaşlatmak",
+                "Daha fazla reklam göstermek",
+                "Bilgisayara virüs bulaştırmak"
+              ],
               "correct": 0,
               "explanation": "Süper! VPN (Virtual Private Network - Sanal Özel Ağ), internet bağlantınızı şifreli bir tünel içine alır. Bu sayede internet servis sağlayıcınız veya ortak Wi-Fi ağlarındaki başkaları ne yaptığınızı göremez."
             },
@@ -926,7 +1663,12 @@
             {
               "type": "mc",
               "question": "Cihazınıza zararlı yazılım bulaşmasını önlemek için ne yapmamalısınız?",
-              "options": ["Bilinmeyen kaynaklardan uygulama indirmek", "İşletim sistemini güncel tutmak", "Antivirüs programı kullanmak", "Resmi uygulama mağazasından indirme yapmak"],
+              "options": [
+                "Bilinmeyen kaynaklardan uygulama indirmek",
+                "İşletim sistemini güncel tutmak",
+                "Antivirüs programı kullanmak",
+                "Resmi uygulama mağazasından indirme yapmak"
+              ],
               "correct": 0,
               "explanation": "Çok doğru! Bilinmeyen kaynaklardan indirilen uygulamalar kötü amaçlı yazılım (malware, virüs, trojan) içerebilir. Her zaman resmi kaynakları (App Store, Google Play, üreticinin sitesi) tercih edin."
             },
